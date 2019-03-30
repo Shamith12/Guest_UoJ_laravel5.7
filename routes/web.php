@@ -55,7 +55,10 @@ Route::get('/confirm', function () {
     return view('confirmreq');
 });
 
-Route::get('/confirm/{Empno}','front@doconfirm');
+//Route::get('/confirm/{Empno}','front@doconfirm');
+Route::get('/confirm/{Empno}/{Strd}/{Endd}', 'front@doconfirm');
+
+
 Route::get('/douserconfirm/{Empno}','front@douserconfirm');
 
 //Route::post('/payinfo','front@payment');

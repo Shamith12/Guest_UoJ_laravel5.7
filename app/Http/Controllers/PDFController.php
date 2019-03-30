@@ -21,15 +21,18 @@ class PDFController extends Controller
 
     //Fill the pdf details
    
-    public function pdfdetails(){
-
+    public function pdfdetails($Empno,$strd,$endd ){
+     
         $id = 001;
+        echo($Empno);
+        echo($strd);
+        echo($endd);
         $table_details =  DB::table('bookinginfos')
                              ->join('users','bookinginfos.Empno','=','users.Empno')
                              ->where('bookinginfos.Empno','=',$id)
                              ->select('bookinginfos.Strd','bookinginfos.Endd','bookinginfos.Amount','users.Uname','users.Nicno','users.Position')
                              ->get();                              
-         return view('pdf',compact('table_details'));
+         //return view('pdf',compact('table_details'));
    }
 
    public function generatePDF()

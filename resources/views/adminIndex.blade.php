@@ -123,8 +123,17 @@
 			<td> {{$user1->Roomid}}</td>
 			<td> {{$user1->Strd}}</td>
 			<td> {{$user1->Endd}}</td>
-			<td> <a href="/confirm/{{$user1->Empno}}" class="btn btn-primary">
+			 <td> 
+			 
+
+			<a href="/confirm/{{$user1->Empno}}/{{$user1->Strd}}/{{$user1->Endd}}" class="btn btn-primary"> 
 			Confirm</a>
+		
+			
+			
+			
+             
+			
 			</td>
 			</tr>
      @endforeach

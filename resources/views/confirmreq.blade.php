@@ -43,21 +43,15 @@
 	 <th>Start Date</th>
 	 <th>End date</th></h1>
 	 <th>Action</th></h1>
-	 @foreach($user as $user1)
-			<tr> 
-			<td> {{$user1->Uname}}</td>
-			<td> {{$user1->Jtype}}</td>
-			<td> {{$user1->Roomid}}</td>
-			<td> {{$user1->Strd}}</td>
-			<td> {{$user1->Endd}}</td>
-			<td> <a href="/confirm/{{$user1->Empno}}" class="btn btn-primary">
-			Confirm</a>
+	 
 			</td>
 			</tr>
      @endforeach
 	 </table >
 	 </br>
 	 <td> <a href="index" class="btn btn-primary">Home</a>
+
+	 
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

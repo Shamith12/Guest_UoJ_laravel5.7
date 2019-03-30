@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 
 class MailController extends Controller
 {
-    public function send(){
+    public function send($Empno){
         Mail::send (['text'=>'send'],['name'=>'gunwardhana'],function($message){
            
             $message ->to('dilshandilip6@gmail.com','To Dilshan');
