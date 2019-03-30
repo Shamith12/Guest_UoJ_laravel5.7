@@ -64,9 +64,9 @@ Route::get('/paymentinfo','front@paymentinfo');
 //Route::get('/paybillinfo/{Empno}','front@paybillinfo');
 Route::post('/dopay','front@dopay');
 
-
- Route::post('/date','check_available_room_contoller@checkdate');
- Route::get('/index','check_available_room_contoller@checkdate');
+//check available room
+Route::post('/date','check_available_room_contoller@checkdate');
+Route::get('/availableroom','check_available_room_contoller@checkdate');
 
 
  //Admin Panel Routes

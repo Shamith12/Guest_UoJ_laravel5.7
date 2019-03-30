@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use DB;
 
 class check_available_room_contoller extends Controller
 {
@@ -11,9 +13,49 @@ class check_available_room_contoller extends Controller
          
         $start_date = $request->input('startdate');   
         $end_date  = $request->input('enddate');
+        
+        $booking_room = DB::table('bookinginfos')
+                        ->wheredate('Strd','>=',$start_date)
+                        ->wheredate('Endd','<=',$end_date)
+                        ->orwhere('Strd','<=',$start_date)
+                            ->where('Endd','>=',$start_date)
+                        ->orwhere('Strd','<=',$end_date)
+                             ->where('Endd','>=',$end_date)
+                        ->where('Cleval','==',4)         
+                        ->select('Roomid')
+                        ->distinct()
+                       ->get();
 
-        dd($start_date);
-    
-    
+         $room = DB::table('rooms')
+              ->select('Roomid','price','size','description','Bed_Type','Facilities')
+              ->get(); 
+         
+              $booking_room_length = count($booking_room);
+              $room_len = count($room);
+       
+              if($booking_room_length==0){
+                 
+                $data = $room;
+                
+               
+              }
+              else{
+                    
+                     foreach($room as $allroom){
+                         $flag = false;
+                         foreach($booking_room as $booked){
+                             if(($allroom->Roomid) == ($booked->Roomid)){
+                                 $flag = true;
+                             }
+                         }
+                         if($flag == false){
+                             $data[] = $allroom;
+                         }
+
+                     }
+                    }
+            
+        //dd($data);     
+       return view('availableroom',compact('data'));
     }            
 }
