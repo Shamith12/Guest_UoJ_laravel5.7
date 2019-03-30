@@ -16,7 +16,7 @@
  
  ->Add Project 
  
-             git clone https://github.com/DilshanDilipudara/Guest_House_UOJ.git
+             https://github.com/Shamith12/Guest_UoJ_laravel5.7.git
             
   -> Add database
            Use the database provided with the git file. Create a database in localhost/phpmyadmin with the same name. \
