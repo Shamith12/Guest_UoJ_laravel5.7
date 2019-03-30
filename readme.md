@@ -12,8 +12,10 @@
 ->Requement
 
            -> Laraval
-           ->mysql
- 
+           -> mysql
+           -> Bootstap
+           -> Javascript
+           
  ->Add Project 
  
              https://github.com/Shamith12/Guest_UoJ_laravel5.7.git
