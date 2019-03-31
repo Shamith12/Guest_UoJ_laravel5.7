@@ -27,10 +27,12 @@ class PDFController extends Controller
          
    }
      function get_customer_data(){
-        $id = 001;
+          $Empno = 001;
          $customer_data = DB::table('bookinginfos')
                              ->join('users','bookinginfos.Empno','=','users.Empno')
-                              ->where('bookinginfos.Empno','=',$id)
+                              ->where('bookinginfos.Empno','=',$Empno)
+                             // ->where('bookinginfos.Strd','=',$strd)
+                             // ->where('bookinginfos.Endd','=',$endd)
                               ->select('bookinginfos.Strd','bookinginfos.Endd','bookinginfos.Amount','users.Uname','users.Nicno','users.Position')
                               ->get();
                               
@@ -41,7 +43,7 @@ class PDFController extends Controller
 
     $pdf = \App::make('dompdf.wrapper');
     $pdf ->loadHTML($this->convert_customer_data_to_html());
-        return  $pdf->download('guestPayment.pdf');
+        return  $pdf->stream('guestPayment.pdf');
     }
    
     function convert_customer_data_to_html(){

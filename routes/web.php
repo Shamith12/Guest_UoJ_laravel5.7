@@ -55,7 +55,10 @@ Route::get('/confirm', function () {
     return view('confirmreq');
 });
 
-Route::get('/confirm/{Empno}','front@doconfirm');
+//Route::get('/confirm/{Empno}','front@doconfirm');
+Route::get('/confirm/{Empno}/{Roomid}/{Strd}/{Endd}', 'front@doconfirm');
+
+
 Route::get('/douserconfirm/{Empno}','front@douserconfirm');
 
 //Route::post('/payinfo','front@payment');
@@ -85,10 +88,10 @@ Route::get('/availableroom','check_available_room_contoller@checkdate');
 Route::get('/send','MailController@send');
 
 
-Route::get('/pdf','PDFController@pdfdetails');
+Route::get('/pdf','PDFController@pdf');
 
 //Download pdf  user
-Route::get('/pdf/pdf','PDFController@pdf');
+//Route::get('/pdf/pdf','PDFController@pdf');// Route::get('/pdf/pdf','PDFController@pdf');
 
 
 

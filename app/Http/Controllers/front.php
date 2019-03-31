@@ -58,14 +58,28 @@ public function confirmrequest(){
     ->join('users','users.Empno','=','bookinginfos.Empno')
     ->where('Cleval',!3)
     ->get();  
+  
 Return view('adminIndex',['user'=>$data]);
 }
 
-public function doconfirm($Empno){
-    //echo("$Empno");
-    DB::table('bookinginfos')
+public function doconfirm($Empno ,$roomid,$strd,$endd){
+    //echo($Empno);
+    //echo($strd);
+    //echo($endd);
+   DB::table('bookinginfos')
             ->where('Empno', $Empno )
+            ->where('Strd', $strd )
+            ->where('Endd', $endd )
             ->update(['Cleval' => 3]);
+            //Session::put('key', '$Empno');
+
+            app('App\Http\Controllers\PDFController')->pdf($Empno,$roomid,$strd,$endd);
+            
+
+           
+            //app('App\Http\Controllers\MailController')->send($Empno  );
+           // return PDFController->pdfdetails();
+           // PDFController@pdfdetails();
             return redirect()->back();
 
 }

@@ -14,8 +14,8 @@
          <div class="offset-3">
               <h1>
               <pre>
-                   Hai sir,
-                      You booked university of Jaffna guest house room is confirm.
+                   Hi sir,
+                      You have been booked university of Jaffna guest house room is confirm.
                       You can download your bill payment below link.
              </pre>
                   

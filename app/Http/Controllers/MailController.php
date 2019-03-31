@@ -12,8 +12,8 @@ use DB;
 
 class MailController extends Controller
 {
-    public function send(Request $request){
-
+    public function send(){
+      
         $id = 001;
         $gmail = DB::table('users')
                  ->where('Empno','=',$id)
@@ -26,10 +26,12 @@ class MailController extends Controller
             // $message ->to('dilshandilip6@gmail.com','To Dilshan');
             $message ->to('gunawardhanaudara@gmail.com')
             ->subject('UOJ');
-            //$message->attach('/home/user/Desktop/Guest_UoJ_laravel5.7/public/PDF/Guest_Payment.pdf');
             $message ->from('gunawardhanaudara@gmail.com','gunwardhana');
+
             echo "Basic Email Sent. Check your inbox.";
+            
         });
+       
     }
 
     
