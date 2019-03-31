@@ -171,8 +171,14 @@
             </div>
       </div>
 
-      <br><br><br><br><br><br>
-      <br><br>
+      <br><br><br>
+      
+                   <div class="col-md-6 col-lg-3 align-self-end offset-6">
+                      <button  type ="submit" class="btn btn-primary btn-block">Bill payment</button>
+                    </div>
+      
+      <br><br><br>
+      
   <footer class="footer">
     <div class="container">
       <div class="row mb-5">
