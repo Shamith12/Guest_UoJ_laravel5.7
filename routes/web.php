@@ -64,11 +64,6 @@ Route::get('/paymentinfo','front@paymentinfo');
 //Route::get('/paybillinfo/{Empno}','front@paybillinfo');
 Route::post('/dopay','front@dopay');
 
-//check available room
-Route::post('/date','check_available_room_contoller@checkdate');
-Route::get('/availableroom','check_available_room_contoller@checkdate');
-
-
  //Admin Panel Routes
  Route::get('/adminIndex', function () {
     return view('adminIndex');
@@ -81,11 +76,21 @@ Route::get('/managerooms', function () {
 Route::get('/confirmuser','front@confirmuser');
 Route::get('/confirmlist','front@confirmrequest');
 
-Route::get('send','mailController@send');
+//check available
+Route::post('/date','check_available_room_contoller@checkdate');
+Route::get('/availableroom','check_available_room_contoller@checkdate');
+
+//mail send to user confirm AR
+//Route::post('/conforimreq','MailController@send');
+Route::get('/send','MailController@send');
 
 
 Route::get('/pdf','PDFController@pdfdetails');
-Route::get('/send','PDFController@generatePDF');
-//Route::get('/send','MailController@send');
+
+//Download pdf  user
+Route::get('/pdf/pdf','PDFController@pdf');
+
+
+
 
 
