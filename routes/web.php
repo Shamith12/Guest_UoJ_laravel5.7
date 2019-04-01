@@ -56,11 +56,11 @@ Route::get('/confirm', function () {
 });
 
 //Route::get('/confirm/{Empno}','front@doconfirm');
-Route::get('/confirm/{Empno}/{Roomid}/{Strd}/{Endd}', 'front@doconfirm');
+
 
 
 Route::get('/douserconfirm/{Empno}','front@douserconfirm');
-
+Route::get('/rejectuser/{Empno}','front@rejectuser');
 //Route::post('/payinfo','front@payment');
 
 Route::get('/paymentinfo','front@paymentinfo');
@@ -77,7 +77,12 @@ Route::get('/managerooms', function () {
 });
 
 Route::get('/confirmuser','front@confirmuser');
+
 Route::get('/confirmlist','front@confirmrequest');
+Route::get('/confirm/{Empno}/{Roomid}/{Strd}/{Endd}', 'front@doconfirm');
+Route::get('/reject/{Empno}/{Roomid}/{Strd}/{Endd}', 'front@doreject');
+
+
 
 //check available
 Route::post('/date','check_available_room_contoller@checkdate');

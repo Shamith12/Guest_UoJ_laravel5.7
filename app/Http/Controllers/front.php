@@ -20,7 +20,7 @@ class front extends Controller
         ->select('users.Uname','bookinginfos.Jtype','bookinginfos.Roomid',
                 'bookinginfos.Strd','bookinginfos.Endd','bookinginfos.Empno')
         ->join('users','users.Empno','=','bookinginfos.Empno')
-        ->where('Cleval',!3)
+        ->where('Cleval','=','0')
         ->get();
 
         //$data = DB::table('bookinginfos')->where('Cleval',!3)->get();
@@ -56,7 +56,7 @@ public function confirmrequest(){
     ->select('users.Uname','bookinginfos.Jtype','bookinginfos.Roomid',
             'bookinginfos.Strd','bookinginfos.Endd','bookinginfos.Empno')
     ->join('users','users.Empno','=','bookinginfos.Empno')
-    ->where('Cleval',!3)
+    ->where('Cleval','=','0')
     ->get();  
   
 Return view('adminIndex',['user'=>$data]);
@@ -72,19 +72,23 @@ public function doconfirm($Empno ,$roomid,$strd,$endd){
             ->where('Endd', $endd )
             ->update(['Cleval' => 3]);
             //Session::put('key', '$Empno');
-
-            //app('App\Http\Controllers\PDFController')->pdf($Empno,$roomid,$strd,$endd);
-            
-
-           
-            //app('App\Http\Controllers\MailController')->send($Empno  );
-           // return PDFController->pdfdetails();
-           // PDFController@pdfdetails();
             return redirect()->back();
 
 }
 
+public function doreject($Empno ,$roomid,$strd,$endd){
+    //echo($Empno);
+    //echo($strd);
+    //echo($endd);
+   DB::table('bookinginfos')
+            ->where('Empno', $Empno )
+            ->where('Strd', $strd )
+            ->where('Endd', $endd )
+            ->update(['Cleval' => 5]);
+            //Session::put('key', '$Empno');
+            return redirect()->back();
 
+}
 
 
 //payment information part
@@ -147,7 +151,14 @@ public function douserconfirm($Empno){
             return redirect()->back();
 //dd($data->all());
 }
-
+public function rejectuser($Empno){
+    //echo("$Empno");
+    DB::table('users')
+            ->where('Empno', $Empno )
+            ->update(['Crts' => 5]);
+            return redirect()->back();
+//dd($data->all());
+}
 
 //Booking
 

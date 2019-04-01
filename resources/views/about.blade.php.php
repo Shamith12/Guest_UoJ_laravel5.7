@@ -30,12 +30,15 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="rooms.html" class="nav-link">Rooms</a></li>
-          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-          <li class="nav-item active"><a href="about.html" class="nav-link">About Us</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item active"><a href="/home" class="nav-link">Home</a></li>
+           <li class="nav-item"><a href="/rooms" class="nav-link">Rooms</a></li>
+          <li class="nav-item"><a href="/mypdf" class="nav-link">PDF</a></li>
+          <li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>
+
+         @if(Auth::user()->Position =='Admin')  
+          <li class="nav-item"><a href="/confirmlist" class="nav-link">Admin Panel</a></li>
+         @endif
+      
         </ul>
       </div>
     </div>

@@ -150,12 +150,28 @@
 			 <td> 
 			 
 
-			<a href="/confirm/{{$user1->Empno}}/{{$user1->Roomid}}/{{$user1->Strd}}/{{$user1->Endd}}" class="btn btn-primary"> 
-			Confirm</a>
-		
+			
+		    <a href="/confirm/{{$user1->Empno}}/{{$user1->Roomid}}/{{$user1->Strd}}/{{$user1->Endd}}" class="btn btn-large btn-primary" data-toggle="confirmation" data-title="Open Google?" onclick="return myFunction1();"> 
+			confirm</a>
+			<a href="/reject/{{$user1->Empno}}/{{$user1->Roomid}}/{{$user1->Strd}}/{{$user1->Endd}}" class="btn btn-danger" onclick="return myFunction();"> 
+			Reject</a>
 			
 			
-			
+
+
+<script>
+  function myFunction() {
+      if(!confirm("Are You Sure to delete this"))
+      event.preventDefault();
+  }
+
+  function myFunction1() {
+      if(!confirm("Are You Sure to confirm this"))
+      event.preventDefault();
+  }
+ </script>
+
+
              
 			
 			</td>
