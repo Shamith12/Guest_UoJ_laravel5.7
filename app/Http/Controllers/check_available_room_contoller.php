@@ -54,8 +54,8 @@ class check_available_room_contoller extends Controller
 
                      }
                     }
-            
-        //dd($data);     
-       return view('availableroom',compact('data'));
+        $date = array($start_date,$end_date);
+        // dd($date[0]);     
+       return view('availableroom',compact('data','date'));
     }            
 }

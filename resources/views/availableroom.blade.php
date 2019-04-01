@@ -178,6 +178,9 @@
             @endforeach
           </ul>
           @endif
+    
+    
+    
 
 
      <div class="site-section block-13 bg-light">
@@ -192,7 +195,9 @@
            <div class="row">
             <div class="col-md-12">
               <div class="nonloop-block-13 owl-carousel">
-                @foreach($data as $room)
+
+
+              @foreach($data as $room)
                  <div class="item">
                     
                     <div class="block-34">
@@ -202,7 +207,7 @@
                       <div class="text">
                         <h2 class="heading"></h2>
                         <div class="price"><sup>Rs : </sup>{{$room->price}}<span class="number"></span><sub>/per night</sub></div>
-                   
+
                         <ul class="specs">
                           <li><strong>Room Number :{{$room->Roomid}}</strong></li>
                           <li><strong>Description : {{$room->description}}</strong></li>
@@ -211,12 +216,14 @@
                           <li><strong>Bed Type:{{$room->Bed_Type}}</strong> </li>
                           <li><strong>price:{{$room->price}}</strong></li>
                         </ul> 
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" type="button">Book Now</button>
+                        <button class="btn btn-primary" name={{$room->Roomid}} data-toggle="modal" data-target="#modalQuickView" type="button">Book Now</button>
                       </div>
                     </div>
                     
                   </div>               
             @endforeach 
+
+
               </div>
             </div> 
           </div>
@@ -300,7 +307,7 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
+  
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -344,34 +351,53 @@
                 <div class="col-md-10">
 
                     <div class="form-group">
+                    Name:
                         <input type="text" name="userName" value="{{Auth::user()->Uname}}" placeholder="Name of the Applicant" class="form-control">
                     </div>
                     
                 </div>
                 <div class="col-md-10">
                     <div class="form-group">
+                    Position:
+
                         <input type="text" name="position" value="{{Auth::user()->Position}}" placeholder="Position" class="form-control">
                     </div>
                 </div>
                 <div class="col-md-10">
                     <div class="form-group">
+                    Department:
+
                         <input type="text" name="department" value="{{Auth::user()->Department}}" placeholder="Department" class="form-control">
                     </div>
                 </div>
                 <div class="col-md-10">
                     <div class="form-group">
+                    Telephone:
+
                         <input type="text" name="phone" value="{{Auth::user()->Pno}}" placeholder="Telephone" class="form-control">
                     </div>
                 </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                    From:
+                        <input type="text" name="start" readonly="readonly" id="start" value="{{$date[0]}}" placeholder="Telephone" class="form-control" onready="disableField("start")">
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="form-group">
+                    To:
+                        <input type="text" name="end" readonly="readonly" id="end" value="{{$date[1]}}" placeholder="Telephone" class="form-control">
+                    </div>
+                </div>
                 
-
               
-                <div class="col-md-4">
-                <label class="radio-inline"><input type="radio" name="uniguests" name="optradio" checked>Guets Invited By University</label>
-                <label class="radio-inline"><input type="radio" name="visitingstaff" name="optradio">Visiting Staff</label>
-                <label class="radio-inline"><input type="radio" name="unistaff" name="optradio">University Staff</label>
-                <label class="radio-inline"><input type="radio" name="pvt" name="optradio">Private - Single</label>
-                <label class="radio-inline"><input type="radio" name="offdutystf" name="optradio">Official Duty Staff</label>
+              
+              <div class="col-md-4" name="reason">
+                <label class="radio-inline"><input type="radio" id="uniguests" name="optradio" value = "University Guests" checked>Guets Invited By University</label>
+                <label class="radio-inline"><input type="radio" id="visitingstaff" name="optradio">Visiting Staff</label>
+                <label class="radio-inline"><input type="radio" id="unistaff" name="optradio">University Staff</label>
+                <label class="radio-inline"><input type="radio" id="pvt" name="optradio">Private - Single</label>
+                <label class="radio-inline"><input type="radio" id="offdutystf" name="optradio">Official Duty Staff</label>
                       
                 </div>             
                     
@@ -416,5 +442,21 @@ function closeForm() {
 $(document).ready(function() {
 $('.mdb-select').materialSelect();
 });
+
+function disableField($id){
+  document.getelementById($id).disabled = true;
+
+}
+
+// function getRadioValue(){
+//   var reason = "";
+
+//   $.each($("input:reason)"),function(){
+//       reason
+
+
+//   }
+
+// }
 
 </script>

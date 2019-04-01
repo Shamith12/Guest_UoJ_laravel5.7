@@ -165,13 +165,44 @@ public function rejectuser($Empno){
 public function bookThis(Request $request){
 
     $name = $request->input('userName');
-    // $name = $request->input();
 
-    dd($name);
+    $pos = $request->input('position');
+
+    $dept = $request->input('department');
+
+    $phone = $request->input('phone');
+
+    $strd = $request->input('start');
+
+    $endd = $request->input('end');
+
+    $Empno = Auth::user()->Empno;
+
+    $roomid = "4";
+
+    $reason = "";
+
+    $am = "4000";
+
+    $isbkd = "1";
+
+    $cleval = "1";
+
+    $bookingdata = array($Empno,$reason,$roomid,$strd,$endd,$am,$isbkd);
+
+    // dd($endd);
+    // DB::table('bookinginfos')
+    //         ->insert(['Empno' => $Empno]);
 
 
-   
-    
+    //         return redirect()->back();
+
+
+            DB::insert('insert into bookinginfos (Empno,Jtype,Roomid,Strd,Endd,Amount,Cleval,isbooked) values(?,?,?,?,?,?,?,?)',[$Empno,$reason,$roomid,$strd,$endd,$am,$cleval,$isbkd]);
+            echo "Booked Successfully.<br/>";
+            echo '<a href = "/home">Click Here</a> to go back.';
+
+
 
 }
 
