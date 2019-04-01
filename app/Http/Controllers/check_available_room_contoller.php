@@ -11,6 +11,13 @@ class check_available_room_contoller extends Controller
 {
     public function checkdate(Request $request){
          
+    //     $this->validate($request,[
+    //         'startdate' => 'required|date|after:today',
+    //           'enddate' => 'required|date|',
+    // ]);
+ 
+  
+
         $start_date = $request->input('startdate');   
         $end_date  = $request->input('enddate');
         
@@ -21,7 +28,7 @@ class check_available_room_contoller extends Controller
                             ->where('Endd','>=',$start_date)
                         ->orwhere('Strd','<=',$end_date)
                              ->where('Endd','>=',$end_date)
-                        ->where('Cleval','==',4)         
+                        ->where('Cleval','==',3)         
                         ->select('Roomid')
                         ->distinct()
                        ->get();
@@ -53,9 +60,16 @@ class check_available_room_contoller extends Controller
                          }
 
                      }
+<<<<<<< HEAD
                     }
         $date = array($start_date,$end_date);
         // dd($date[0]);     
+=======
+                    } 
+        
+        $date[] = array($start_date,$end_date);
+       // dd($date);
+>>>>>>> e5664a05db553a0992360abe588bc25ecb7101ff
        return view('availableroom',compact('data','date'));
     }            
 }

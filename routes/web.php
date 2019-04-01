@@ -44,6 +44,8 @@ Route::get('/showAdminPanel', function(){
 });
 
 Route::get('/profile', 'UserController@profile');
+Route::post('/profile','UserController@update_profile1');
+
 Route::get('/editprofile{id}','UserController@edit');
 Route::put('/update{id}','UserController@update');
 Route::get('/waitinglist','front@managewaiting');
