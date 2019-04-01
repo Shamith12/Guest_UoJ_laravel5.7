@@ -158,12 +158,32 @@
 
 
 			
-			<td> <a href="/douserconfirm/{{$user1->Empno}}" class="btn btn-primary">
+			<td> <a href="/douserconfirm/{{$user1->Empno}}" class="btn btn-large btn-primary" data-toggle="confirmation" data-title="Open Google?" onclick="return myFunction1();">
 			<i class="fas fa-user-check"></i>Confirm</a>
+
+			 <a href="/rejectuser/{{$user1->Empno}}" class="btn btn-danger" data-toggle="confirmation" data-title="Open Google?" onclick="return myFunction();">
+			<i class="fas fa-user-check"></i>reject</a>
 			</td>
 			</tr>
      @endforeach
 	 </table >
+
+
+
+	 <script>
+  function myFunction() {
+      if(!confirm("Are You Sure to delete this"))
+      event.preventDefault();
+  }
+
+  function myFunction1() {
+      if(!confirm("Are You Sure to confirm this"))
+      event.preventDefault();
+  }
+ </script>
+
+
+
 	 </br>
 	 <td> <a href="/home" class="btn btn-primary">Home</a>
 
