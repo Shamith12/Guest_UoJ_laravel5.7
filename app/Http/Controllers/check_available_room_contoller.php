@@ -11,6 +11,13 @@ class check_available_room_contoller extends Controller
 {
     public function checkdate(Request $request){
          
+    //     $this->validate($request,[
+    //         'startdate' => 'required|date|after:today',
+    //           'enddate' => 'required|date|',
+    // ]);
+ 
+  
+
         $start_date = $request->input('startdate');   
         $end_date  = $request->input('enddate');
         
@@ -53,9 +60,7 @@ class check_available_room_contoller extends Controller
                          }
 
                      }
-                    }
-            
-        //dd($data);     
+                    }    
        return view('availableroom',compact('data'));
     }            
 }

@@ -170,7 +170,7 @@
               </form>
             </div>
       </div>
-
+         <br><br>
       @if(count($errors)>0)
           <ul>
             @foreach($errors->all() as $error)
@@ -209,7 +209,7 @@
                           <li><strong>Facilities:{{$room->Facilities}}</strong></li>
                           <li><strong>Size:{{$room->size}}</strong>m<sup>2</sup></li>
                           <li><strong>Bed Type:{{$room->Bed_Type}}</strong> </li>
-                          <li><strong>price:{{$room->price}}</strong></li>
+                          
                         </ul> 
                         <button class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView" type="button">Book Now</button>
                       </div>
