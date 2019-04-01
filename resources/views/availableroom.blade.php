@@ -336,61 +336,42 @@
         
         
             <h2 class="h2">
-              <strong>Please Fill out the Booking Requeset Form.</strong>
+              <strong>Please Fill out the Booking Request Form.</strong>
             </h2>
-           
-
-          
-                
-              <form action="/" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+                          
+            <form action="/bookthis">
+                 {{csrf_field()}}
                 <div class="col-md-10">
+
                     <div class="form-group">
-                        <input type="text" value="{{Auth::user()->Uname}}" placeholder="Name of the Applicant" class="form-control">
+                        <input type="text" name="userName" value="{{Auth::user()->Uname}}" placeholder="Name of the Applicant" class="form-control">
                     </div>
                     
                 </div>
                 <div class="col-md-10">
                     <div class="form-group">
-                        <input type="text" value="{{Auth::user()->Position}}" placeholder="Position" class="form-control">
+                        <input type="text" name="position" value="{{Auth::user()->Position}}" placeholder="Position" class="form-control">
                     </div>
                 </div>
                 <div class="col-md-10">
                     <div class="form-group">
-                        <input type="text" value="{{Auth::user()->Department}}" placeholder="Department" class="form-control">
+                        <input type="text" name="department" value="{{Auth::user()->Department}}" placeholder="Department" class="form-control">
                     </div>
                 </div>
                 <div class="col-md-10">
                     <div class="form-group">
-                        <input type="text" value="{{Auth::user()->Pno}}" placeholder="" class="form-control">
-                    </div>
-                </div>
-                <div class="col-md-10">
-                    <div class="form-group">
-                        <input type="text" value="{{Auth::user()->Pno}}" placeholder="" class="form-control">
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-                  <select>
-                    <option value="" disabled selected>Choose Location</option>
-                    <option value="1">Guest House Colombo</option>
-                    <option value="2">Guest House Jaffna</option>
-                    <option value="3">Guest House Ariviyal Nagar</option>
-                    <option value="3">Guest House Vauniya Campus</option>
-
-                  </select>
-
+                        <input type="text" name="phone" value="{{Auth::user()->Pno}}" placeholder="Telephone" class="form-control">
                     </div>
                 </div>
                 
 
+              
                 <div class="col-md-4">
-                <label class="radio-inline"><input type="radio" name="optradio" checked>Guets Invited By University</label>
-                <label class="radio-inline"><input type="radio" name="optradio">Visiting Staff</label>
-                <label class="radio-inline"><input type="radio" name="optradio">University Staff</label>
-                <label class="radio-inline"><input type="radio" name="optradio">Private - Single</label>
-                <label class="radio-inline"><input type="radio" name="optradio">Official Duty Staff</label>
+                <label class="radio-inline"><input type="radio" name="uniguests" name="optradio" checked>Guets Invited By University</label>
+                <label class="radio-inline"><input type="radio" name="visitingstaff" name="optradio">Visiting Staff</label>
+                <label class="radio-inline"><input type="radio" name="unistaff" name="optradio">University Staff</label>
+                <label class="radio-inline"><input type="radio" name="pvt" name="optradio">Private - Single</label>
+                <label class="radio-inline"><input type="radio" name="offdutystf" name="optradio">Official Duty Staff</label>
                       
                 </div>             
                     
@@ -404,15 +385,13 @@
                     <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the <a href="">Terms and Conditions</a> and Privacy Policy
 
                     <br>
-                  
-                  
+
                   
                   <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                  <button type="submit" class="btn btn-primary">Send</button>
 
               
               </form>
-             
 
               </div>
             </div>
@@ -437,4 +416,5 @@ function closeForm() {
 $(document).ready(function() {
 $('.mdb-select').materialSelect();
 });
-</scrip>
+
+</script>

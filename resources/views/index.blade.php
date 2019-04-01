@@ -300,32 +300,28 @@
               <form action="/" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
                 <div class="col-md-10">
                     <div class="form-group">
-                        <input type="text" value="{{Auth::user()->Uname}}" placeholder="Name of the Applicant" class="form-control">
+                        <input type="text" id="userName" value="{{Auth::user()->Uname}}" placeholder="Name of the Applicant" class="form-control">
                     </div>
                     
                 </div>
                 <div class="col-md-10">
                     <div class="form-group">
-                        <input type="text" value="{{Auth::user()->Position}}" placeholder="Position" class="form-control">
+                        <input type="text" id="position" value="{{Auth::user()->Position}}" placeholder="Position" class="form-control">
                     </div>
                 </div>
                 <div class="col-md-10">
                     <div class="form-group">
-                        <input type="text" value="{{Auth::user()->Department}}" placeholder="Department" class="form-control">
+                        <input type="text" id="department" value="{{Auth::user()->Department}}" placeholder="Department" class="form-control">
                     </div>
                 </div>
                 <div class="col-md-10">
                     <div class="form-group">
-                        <input type="text" value="{{Auth::user()->Pno}}" placeholder="" class="form-control">
+                        <input type="text" id="phone" value="{{Auth::user()->Pno}}" placeholder="Telephone" class="form-control">
                     </div>
                 </div>
-                <div class="col-md-10">
-                    <div class="form-group">
-                        <input type="text" value="{{Auth::user()->Pno}}" placeholder="" class="form-control">
-                    </div>
-                </div>
+                
 
-                <div class="col-md-6">
+                <!-- <div class="col-md-6">
                     <div class="form-group">
                   <select>
                     <option value="" disabled selected>Choose Location</option>
@@ -337,7 +333,7 @@
                   </select>
 
                     </div>
-                </div>
+                </div> -->
                 
 
                 <div class="col-md-4">

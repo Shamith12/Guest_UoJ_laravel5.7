@@ -83,6 +83,9 @@ Route::get('/confirmlist','front@confirmrequest');
 Route::post('/date','check_available_room_contoller@checkdate');
 Route::get('/availableroom','check_available_room_contoller@checkdate');
 
+//Booking
+Route::get('/bookthis','front@bookThis');
+
 //mail send to user confirm AR
 //Route::post('/conforimreq','MailController@send');
 Route::get('/send','MailController@send');

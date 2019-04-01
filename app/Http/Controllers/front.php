@@ -152,7 +152,26 @@ public function douserconfirm($Empno){
 //Booking
 
 public function bookThis(Request $request){
-         
+
+    $name = $request->input('userName');
+    // $name = $request->input();
+
+    dd($name);
+
+
+   
+    
+
+}
+
+
+
+public function doBooking($Empno,$jtype,$roomid,$str,$end,$amt,$isbooked){
+
+
+
+
+
 }
 
 
@@ -180,6 +199,7 @@ public function downloadpdf($Empno ,$roomid,$strd,$endd){
   
 //Return view('mypdf',['user'=>$data]);
 }
+
 
 
 

@@ -30,7 +30,7 @@
         </a>
     </li>   
     <li>
-        <a href="/index">
+        <a href="/home">
             <i class="ti-home"></i>
             <p>Back To site</p>
         </a>
