@@ -173,11 +173,10 @@
 	 <script>
   function myFunction() {
       if(!confirm("Are You Sure to delete this"))
-      event.preventDefault();
-  }
+       
 
   function myFunction1() {
-      if(!confirm("Are You Sure to confirm this"))
+      if(!confirm("Are You Sure to add him/her"))
       event.preventDefault();
   }
  </script>
