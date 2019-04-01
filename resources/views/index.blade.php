@@ -108,7 +108,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="/index" class="nav-link">Home</a></li>
            <li class="nav-item"><a href="/rooms" class="nav-link">Rooms</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="/mypdf" class="nav-link">PDF</a></li>
           <li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>
 
          @if(Auth::user()->Position =='Admin')  
