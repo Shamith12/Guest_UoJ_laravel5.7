@@ -151,15 +151,14 @@
 			 
 
 			
-		    <a href="/confirm/{{$user1->Empno}}/{{$user1->Roomid}}/{{$user1->Strd}}/{{$user1->Endd}}" class="btn btn-large btn-primary" data-toggle="confirmation" data-title="Open Google?" onclick="return myFunction1();"> 
-			confirm</a>
-			<a href="/reject/{{$user1->Empno}}/{{$user1->Roomid}}/{{$user1->Strd}}/{{$user1->Endd}}" class="btn btn-danger" onclick="return myFunction();"> 
-			Reject</a>
+		    <a href="/confirm/{{$user1->Empno}}/{{$user1->Roomid}}/{{$user1->Strd}}/{{$user1->Endd}}"class="btn btn-large btn-primary" data-toggle="confirmation" data-title="Open Google?" onclick="return myFunction1();"> 
+			<i class="fa fa-shopping-cart"></i> Confirm</a></a>
+			<a href="/reject/{{$user1->Empno}}/{{$user1->Roomid}}/{{$user1->Strd}}/{{$user1->Endd}}" class="btn btn-large btn-primary" data-toggle="confirmation" data-title="Open Google?" onclick="return myFunction();"> 
+			<i class="fa fa-trash-o fa-lg"></i> Reject</a>
 			
 			
-
-
-<script>
+			
+			<script>
   function myFunction() {
       if(!confirm("Are You Sure to delete this"))
       event.preventDefault();

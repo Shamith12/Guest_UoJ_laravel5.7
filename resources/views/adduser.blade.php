@@ -161,7 +161,7 @@
 			<td> <a href="/douserconfirm/{{$user1->Empno}}" class="btn btn-large btn-primary" data-toggle="confirmation" data-title="Open Google?" onclick="return myFunction1();">
 			<i class="fas fa-user-check"></i>Confirm</a>
 
-			 <a href="/rejectuser/{{$user1->Empno}}" class="btn btn-danger" data-toggle="confirmation" data-title="Open Google?" onclick="return myFunction();">
+			 <a href="/rejectuser/{{$user1->Empno}}" class="btn btn-large btn-primary" data-toggle="confirmation" data-title="Open Google?" onclick="return myFunction();">
 			<i class="fas fa-user-check"></i>reject</a>
 			</td>
 			</tr>
@@ -172,8 +172,9 @@
 
 	 <script>
   function myFunction() {
-      if(!confirm("Are You Sure to delete this"))
-       
+      if(!confirm("Are You Sure to remove him/her"))
+      event.preventDefault();
+  }
 
   function myFunction1() {
       if(!confirm("Are You Sure to add him/her"))
