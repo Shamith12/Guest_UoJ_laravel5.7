@@ -186,8 +186,8 @@ Return view('mypdf',['user'=>$data]);
 
 
 public function downloadpdf($Empno ,$roomid,$strd,$endd){
-    echo("$roomid");
-   
+
+    app('App\Http\Controllers\PDFController')->pdf($Empno,$roomid,$strd,$endd);
   
 //Return view('mypdf',['user'=>$data]);
 }

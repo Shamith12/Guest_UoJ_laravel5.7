@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('Nicno');
             $table->string('Abill');
             $table->string('password');
+            $table->string('img')->default('default.jpg');
             $table->rememberToken();
             $table->timestamps();
         });

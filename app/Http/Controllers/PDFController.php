@@ -39,7 +39,7 @@ class PDFController extends Controller
          return  $customer_data;
      }
  
-   public function pdf() {
+   public function pdf($Empno,$roomid,$strd,$endd) {
 
     $pdf = \App::make('dompdf.wrapper');
     $pdf ->loadHTML($this->convert_customer_data_to_html());

@@ -110,6 +110,15 @@
            <li class="nav-item"><a href="/rooms" class="nav-link">Rooms</a></li>
           <li class="nav-item"><a href="/mypdf" class="nav-link">PDF</a></li>
           <li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>
+          <li class="nav-item"><a href="{{ route('logout') }}"  class="nav-link"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+          </li>
 
          @if(Auth::user()->Position =='Admin')  
           <li class="nav-item"><a href="/confirmlist" class="nav-link">Admin Panel</a></li>
@@ -140,7 +149,15 @@
 
     </div>
   </div>
-  
+  <br><br>
+   
+         @if(count($errors)>0)
+          <ul>
+            @foreach($errors->all() as $error)
+            <div class="container alert alert-danger">{{$error}}</div>
+            @endforeach
+          </ul>
+          @endif
   
     <div class="container ">
        <div class="block-32 bg-dark border border-info">
@@ -172,10 +189,11 @@
       </div>
 
       <br><br><br>
-      
-                   <div class="col-md-6 col-lg-3 align-self-end offset-6">
-                      <button  type ="submit" class="btn btn-primary btn-block">Bill payment</button>
-                    </div>
+      <div class="inner" id="divToHide"> 
+            <h2 class="bookbtn-padding offset-2"><?php echo date("Y/M/d")?></h2>
+            
+            </div>
+                   
       
       <br><br><br>
       
