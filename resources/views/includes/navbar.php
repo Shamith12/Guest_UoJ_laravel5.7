@@ -11,12 +11,7 @@
             <p>Add User</p>
         </a>
     </li>
-    <li>
-        <a href='/paymentinfo'>
-            <i class="ti-money "></i>
-            <p>Payments</p>
-        </a>
-    </li>
+ 
     <li>
         <a href="#">
             <i class="ti-world"></i>
