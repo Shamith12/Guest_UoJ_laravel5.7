@@ -94,6 +94,6 @@ Route::get('/pdf','PDFController@pdf');
 //Route::get('/pdf/pdf','PDFController@pdf');// Route::get('/pdf/pdf','PDFController@pdf');
 
 
+Route::get('/mypdf','front@mypdf');
 
-
-
+Route::get('/downloadpdf/{Empno}/{Roomid}/{Strd}/{Endd}', 'front@downloadpdf');

@@ -12,7 +12,6 @@
     <meta name="viewport" content="width=device-width" />
 
 
-    
     <!-- Bootstrap core CSS     -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
@@ -31,70 +30,17 @@
     <link href="css/themify-icons.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
 
-
-	<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-
-	
-<!--===============================================================================================-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-
-
 </head>
 <body>
 
-<div class="wrapper">
-	<div class="sidebar" data-background-color="black" data-active-color="danger">
 
     <!--
 		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
 		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
 	-->
-	<title>Admin Panel</title>
 
-    	<div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="confirmlist" class="simple-text">
-                    Admin Panel
-                </a>
-            </div>
-          
-		     <!-----include nav Bar ---------->
-			 <?php include '../resources/views/includes/navbar.php'?>
-            
-    	</div>
-    </div>
 
-    <div class="main-panel">
-		<nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar bar1"></span>
-                        <span class="icon-bar bar2"></span>
-                        <span class="icon-bar bar3"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Confirm Room Requests Here.</a>
-                </div>
-                
-            </div>
-        </nav>
+  
 
 
         <div class="content">
@@ -124,10 +70,19 @@
 <!--===============================================================================================-->
 </head>
 <body>
-
+<div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <a class="navbar-brand" >download your payment recipt here.</a>
+                </div>
 	<div class="container">
 
 
+	</br>
 	<div class="container mt-3">
 	<input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br></br>
@@ -138,7 +93,7 @@
 	 <th>Room number</th>
 	 <th>Start Date</th>
 	 <th>End date</th></h1>
-	 <th>Action</th></h1>
+	 <th>PDF</th></h1>
 	 <tbody id="myTable">
 	 @foreach($user as $user1)
 			<tr> 
@@ -150,8 +105,8 @@
 			 <td> 
 			 
 
-			<a href="/confirm/{{$user1->Empno}}/{{$user1->Roomid}}/{{$user1->Strd}}/{{$user1->Endd}}" class="btn btn-primary"> 
-			Confirm</a>
+			<a href="/downloadpdf/{{$user1->Empno}}/{{$user1->Roomid}}/{{$user1->Strd}}/{{$user1->Endd}}" class="btn btn-primary"> 
+			Download</a>
 		
 			
 			
@@ -181,8 +136,12 @@ $(document).ready(function(){
 <!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
 <!--===============================================================================================-->	
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
