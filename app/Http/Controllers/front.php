@@ -155,4 +155,34 @@ public function bookThis(Request $request){
          
 }
 
+
+
+
+
+public function mypdf(){
+    $Empno = Auth::user()->Empno;
+    $data=   DB::table('bookinginfos')
+   
+    ->select('users.Uname','bookinginfos.Jtype','bookinginfos.Roomid',
+            'bookinginfos.Strd','bookinginfos.Endd','bookinginfos.Empno')
+    ->join('users','users.Empno','=','bookinginfos.Empno')
+    ->where('Cleval','=','3')
+    ->where('users.Empno', '=',$Empno)
+    ->get();  
+  
+Return view('mypdf',['user'=>$data]);
 }
+
+
+public function downloadpdf($Empno ,$roomid,$strd,$endd){
+    echo("$roomid");
+   
+  
+//Return view('mypdf',['user'=>$data]);
+}
+
+
+
+}
+
+
