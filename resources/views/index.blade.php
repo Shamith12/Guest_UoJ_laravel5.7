@@ -114,7 +114,7 @@
          @if(Auth::user()->Position =='Admin')  
           <li class="nav-item"><a href="/confirmlist" class="nav-link">Admin Panel</a></li>
          @endif
-
+      
         </ul>
       </div>
 
