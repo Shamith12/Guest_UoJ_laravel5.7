@@ -28,7 +28,7 @@ class check_available_room_contoller extends Controller
                             ->where('Endd','>=',$start_date)
                         ->orwhere('Strd','<=',$end_date)
                              ->where('Endd','>=',$end_date)
-                        ->where('Cleval','==',4)         
+                        ->where('Cleval','==',3)         
                         ->select('Roomid')
                         ->distinct()
                        ->get();
@@ -60,7 +60,10 @@ class check_available_room_contoller extends Controller
                          }
 
                      }
-                    }    
-       return view('availableroom',compact('data'));
+                    } 
+        
+        $date[] = array($start_date,$end_date);
+       // dd($date);
+       return view('availableroom',compact('data','date'));
     }            
 }

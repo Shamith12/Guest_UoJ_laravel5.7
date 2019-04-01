@@ -73,7 +73,7 @@ public function doconfirm($Empno ,$roomid,$strd,$endd){
             ->update(['Cleval' => 3]);
             //Session::put('key', '$Empno');
 
-            app('App\Http\Controllers\PDFController')->pdf($Empno,$roomid,$strd,$endd);
+            //app('App\Http\Controllers\PDFController')->pdf($Empno,$roomid,$strd,$endd);
             
 
            
@@ -175,8 +175,8 @@ Return view('mypdf',['user'=>$data]);
 
 
 public function downloadpdf($Empno ,$roomid,$strd,$endd){
-    echo("$roomid");
-   
+
+    app('App\Http\Controllers\PDFController')->pdf($Empno,$roomid,$strd,$endd);
   
 //Return view('mypdf',['user'=>$data]);
 }
