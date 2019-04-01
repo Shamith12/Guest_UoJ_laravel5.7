@@ -110,6 +110,15 @@
            <li class="nav-item"><a href="/rooms" class="nav-link">Rooms</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
           <li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>
+          <li class="nav-item"><a href="{{ route('logout') }}"  class="nav-link"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+          </li>
 
          @if(Auth::user()->Position =='Admin')  
           <li class="nav-item"><a href="/confirmlist" class="nav-link">Admin Panel</a></li>

@@ -87,7 +87,8 @@
                         <option>Medicine</option>
                         <option>Technology</option>
                         <option>Engineering</option>
-                        <option>Agri</option>
+                        <option>Agriculture</option>
+                        <option>Science</option>
                                 </select>
                                 @if ($errors->has('faculty'))
                                     <span class="help-block">
@@ -96,15 +97,7 @@
                                 @endif
                             
                         </div>
-                        <div class="form-group form-input" class="form-group{{ $errors->has('Department') ? ' has-error' : '' }}" >
-                            <input id="Department" type="text" name="Department"   value="{{ old('Department') }}" required >
-                            <label for="Department" class="form-label">Department</label>
-                            @if ($errors->has('Department'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('Department') }}</strong>
-                                    </span>
-                                @endif
-                        </div>
+                       
                         <div class="form-group form-input" class="form-group{{ $errors->has('Position') ? ' has-error' : '' }}">
                             
                                 <select name="Position" id="Position"   value="{{ old('Position') }}"  required>
