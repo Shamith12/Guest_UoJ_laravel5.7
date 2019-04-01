@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width" />
 
 
+    
     <!-- Bootstrap core CSS     -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
@@ -29,6 +30,30 @@
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <link href="css/themify-icons.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+
+
+	<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	
+<!--===============================================================================================-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
 
 </head>
 <body>
@@ -50,22 +75,8 @@
             </div>
           
 		     <!-----include nav Bar ---------->
-<<<<<<< HEAD
 			 <?php include '../resources/views/includes/navbar.php'?>
             
-=======
-			 
-			 <?php 
-			 try {
-				include '../resources/views/includes/navbar.php';
-			}
-			catch (exception $e) {
-				include '..\resources\views\includes\navbar.php';
-			}
-			?>   
-			
-			         
->>>>>>> 7e0183c9f566d4d13a406f587c53fcd26db6b7a9
     	</div>
     </div>
 
@@ -117,7 +128,6 @@
 	<div class="container">
 
 
-	</br>
 	<div class="container mt-3">
 	<input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br></br>
@@ -137,8 +147,33 @@
 			<td> {{$user1->Roomid}}</td>
 			<td> {{$user1->Strd}}</td>
 			<td> {{$user1->Endd}}</td>
-			<td> <a href="/confirm/{{$user1->Empno}}" class="btn btn-primary">
-			Confirm</a>
+			 <td> 
+			 
+
+			
+		    <a href="/confirm/{{$user1->Empno}}/{{$user1->Roomid}}/{{$user1->Strd}}/{{$user1->Endd}}" class="btn btn-large btn-primary" data-toggle="confirmation" data-title="Open Google?" onclick="return myFunction1();"> 
+			confirm</a>
+			<a href="/reject/{{$user1->Empno}}/{{$user1->Roomid}}/{{$user1->Strd}}/{{$user1->Endd}}" class="btn btn-danger" onclick="return myFunction();"> 
+			Reject</a>
+			
+			
+
+
+<script>
+  function myFunction() {
+      if(!confirm("Are You Sure to delete this"))
+      event.preventDefault();
+  }
+
+  function myFunction1() {
+      if(!confirm("Are You Sure to confirm this"))
+      event.preventDefault();
+  }
+ </script>
+
+
+             
+			
 			</td>
 			</tr>
      @endforeach
@@ -162,12 +197,8 @@ $(document).ready(function(){
 <!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
 <!--===============================================================================================-->	
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>

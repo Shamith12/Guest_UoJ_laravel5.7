@@ -71,10 +71,10 @@
                     Admin Panel
                 </a>
             </div>
-<<<<<<< HEAD
-            <?php include '../resources/views/includes/navbar.php'?>
+
             
-=======
+            
+
  
 						<?php 
 							try {
@@ -84,7 +84,7 @@
 								include '..\resources\views\includes\navbar.php';
 							}
 						?>               
->>>>>>> 7e0183c9f566d4d13a406f587c53fcd26db6b7a9
+
 
             
     	</div>
@@ -131,7 +131,7 @@
 
 
 	<div class="container">
-	<input name="admin" type="checkbox" value="1">
+
 	
 <table class="table  table-bordered ">
 
@@ -145,7 +145,7 @@
 	 <th>Department</th>
 	 <th>Position</th></h1>
 	 <th>Action</th></h1>
-	 <th>Action</th></h1>
+	 
 	 <tbody id="myTable">
 	 @foreach($user as $user1)
 			<tr> 
@@ -158,22 +158,36 @@
 
 
 			
-			<td> <a href="/douserconfirm/{{$user1->Empno}}" class="btn btn-primary">
+			<td> <a href="/douserconfirm/{{$user1->Empno}}" class="btn btn-large btn-primary" data-toggle="confirmation" data-title="Open Google?" onclick="return myFunction1();">
 			<i class="fas fa-user-check"></i>Confirm</a>
+
+			 <a href="/rejectuser/{{$user1->Empno}}" class="btn btn-danger" data-toggle="confirmation" data-title="Open Google?" onclick="return myFunction();">
+			<i class="fas fa-user-check"></i>reject</a>
 			</td>
 			</tr>
      @endforeach
 	 </table >
+
+
+
+	 <script>
+  function myFunction() {
+      if(!confirm("Are You Sure to delete this"))
+       
+
+  function myFunction1() {
+      if(!confirm("Are You Sure to add him/her"))
+      event.preventDefault();
+  }
+ </script>
+
+
+
 	 </br>
 	 <td> <a href="/home" class="btn btn-primary">Home</a>
 
 
-	 <form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
 
-<input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the Terms and Conditions and Privacy Policy
-<input type="submit" name="submit" value="submit" />
-
-</form>
 	 <script>
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {

@@ -33,57 +33,25 @@
 </head>
 <body>
 
-<div class="wrapper">
-	<div class="sidebar" data-background-color="black" data-active-color="danger">
 
     <!--
 		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
 		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
 	-->
-	<title>Admin Panel</title>
 
-    	<div class="sidebar-wrapper">
-            <div class="logo">
-                <a href="confirmlist" class="simple-text">
-                    Admin Panel
-                </a>
-            </div>
 
-            
-            <?php include '../resources/views/includes/navbar.php'?>
-            
-        
-        
-    	</div>
-    </div>
-
-    <div class="main-panel">
-		<nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar bar1"></span>
-                        <span class="icon-bar bar2"></span>
-                        <span class="icon-bar bar3"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Payment Information.</a>
-                </div>
-                
-            </div>
-        </nav>
+  
 
 
         <div class="content">
-       <!-- Add table content here -->
-        
+       
 
-
+        <!DOCTYPE html>
+<html lang="en">
 <head>
-
-
-	
-	
+	<title>Table V02</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -99,68 +67,59 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-
-	
 <!--===============================================================================================-->
-<link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
-  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
-<body >
+<body>
+<div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar bar1"></span>
+                        <span class="icon-bar bar2"></span>
+                        <span class="icon-bar bar3"></span>
+                    </button>
+                    <a class="navbar-brand" >download your payment recipt here.</a>
+                </div>
+	<div class="container">
 
 
-
-
-
-
-
-
-    <div class="card  card-title text-center">
-    
 	</br>
 	<div class="container mt-3">
 	<input class="form-control" id="myInput" type="text" placeholder="Search..">
   <br></br>
     </div>
-	<div class="container">
 <table class="table  table-bordered ">
-	<h1><th>Employee number</th>
-	 <th>Name</th>
-	 <th>Bill</th>
-	 <th>Amount</th>
-	 <th>Action</th></h1>
+	<h1><th>Employee name</th>
+	 <th>Type</th>
+	 <th>Room number</th>
+	 <th>Start Date</th>
+	 <th>End date</th></h1>
+	 <th>PDF</th></h1>
 	 <tbody id="myTable">
 	 @foreach($user as $user1)
-	 
 			<tr> 
-			<form method=post action="/dopay">
-			{{csrf_field()}}
-			<td> {{$user1->Empno}}</td>
 			<td> {{$user1->Uname}}</td>
-			<td> {{$user1->Abill}}</td>
-			
+			<td> {{$user1->Jtype}}</td>
+			<td> {{$user1->Roomid}}</td>
+			<td> {{$user1->Strd}}</td>
+			<td> {{$user1->Endd}}</td>
+			 <td> 
+			 
+
+			<a href="/downloadpdf/{{$user1->Empno}}/{{$user1->Roomid}}/{{$user1->Strd}}/{{$user1->Endd}}" class="btn btn-primary"> 
+			Download</a>
 		
-		 
-		 <input type="hidden" id="custId" name="Empno" value= {{$user1->Empno}}>
-		 <input type="hidden" id="custId" name="cur" value= {{$user1->Abill}}>
-     <td><input type="text" class="form-control" name="/payinfo" placeholder="Amount"></td>
-		 
-     <td><input type="submit" class="btn btn-primary" value="pay"></td>
-    </form>
-
-
-	
-			<!--<td> <a href="/paybillinfo/{{$user1->Empno}}" class="btn btn-primary">
-			Pay</a>
+			
+			
+			
+             
+			
 			</td>
-			</tr> -->
+			</tr>
      @endforeach
 	 </table >
-	 
-	 </br>
+	 <br>
 	 <td> <a href="/home" class="btn btn-primary">Home</a>
+
 
 	 <script>
 $(document).ready(function(){
@@ -181,11 +140,19 @@ $(document).ready(function(){
 	<script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
 
 </body>
 </html>
-
-
+            
         </div>
 
 

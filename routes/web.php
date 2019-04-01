@@ -57,19 +57,17 @@ Route::get('/confirm', function () {
     return view('confirmreq');
 });
 
-Route::get('/confirm/{Empno}','front@doconfirm');
-Route::get('/douserconfirm/{Empno}','front@douserconfirm');
+//Route::get('/confirm/{Empno}','front@doconfirm');
 
+
+
+Route::get('/douserconfirm/{Empno}','front@douserconfirm');
+Route::get('/rejectuser/{Empno}','front@rejectuser');
 //Route::post('/payinfo','front@payment');
 
 Route::get('/paymentinfo','front@paymentinfo');
 //Route::get('/paybillinfo/{Empno}','front@paybillinfo');
 Route::post('/dopay','front@dopay');
-
-
- Route::post('/date','check_available_room_contoller@checkdate');
- Route::get('/index','check_available_room_contoller@checkdate');
-
 
  //Admin Panel Routes
  Route::get('/adminIndex', function () {
@@ -81,13 +79,28 @@ Route::get('/managerooms', function () {
 });
 
 Route::get('/confirmuser','front@confirmuser');
+
 Route::get('/confirmlist','front@confirmrequest');
-
-Route::get('send','mailController@send');
-
-
-Route::get('/pdf','PDFController@pdfdetails');
-Route::get('/send','PDFController@generatePDF');
-//Route::get('/send','MailController@send');
+Route::get('/confirm/{Empno}/{Roomid}/{Strd}/{Endd}', 'front@doconfirm');
+Route::get('/reject/{Empno}/{Roomid}/{Strd}/{Endd}', 'front@doreject');
 
 
+
+//check available
+Route::post('/date','check_available_room_contoller@checkdate');
+Route::get('/availableroom','check_available_room_contoller@checkdate');
+
+//mail send to user confirm AR
+//Route::post('/conforimreq','MailController@send');
+Route::get('/send','MailController@send');
+
+
+Route::get('/pdf','PDFController@pdf');
+
+//Download pdf  user
+//Route::get('/pdf/pdf','PDFController@pdf');// Route::get('/pdf/pdf','PDFController@pdf');
+
+
+Route::get('/mypdf','front@mypdf');
+
+Route::get('/downloadpdf/{Empno}/{Roomid}/{Strd}/{Endd}', 'front@downloadpdf');
